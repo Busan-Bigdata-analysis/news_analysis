@@ -202,6 +202,6 @@ $RECYCLE.BIN/
 
 # 현재 환경에 맞는 chromedriver 설치 필요
 # https://chromedriver.chromium.org/downloads
-chromedriver
+chromedriver.exe
 
 # End of https://www.toptal.com/developers/gitignore/api/python,windows,jupyternotebooks
