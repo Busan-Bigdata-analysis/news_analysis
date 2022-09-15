@@ -4,13 +4,17 @@ import time
 from selenium import webdriver
 import re
 
+# 변수 관리
+START_PAGE = 800000
+END_PAGE = 800010
+
 def getNewsFullText(result):
     options = webdriver.ChromeOptions()
     options.add_experimental_option("excludeSwitches", ["enable-logging"])
     wd = webdriver.Chrome('newsCrawer/chromedriver.exe',options=options)
 
     # 뉴스 번호 
-    for i in range(800000,800010):
+    for i in range(START_PAGE,END_PAGE):
         wd.get(f'https://kr.investing.com/news/economy/article-{i}')
         # time.sleep(0.5) #팝업 표시후 크롤링이 안되서 브라우저가 닫히는 것을 방지
         
@@ -40,8 +44,6 @@ def getNewsFullText(result):
             print(e)
             continue
     
-        print('-'*50)
-
 def main():
     result = []
     getNewsFullText(result)
