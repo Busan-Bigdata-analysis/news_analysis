@@ -204,4 +204,7 @@ $RECYCLE.BIN/
 # https://chromedriver.chromium.org/downloads
 chromedriver.exe
 
+# 생성되는 data 파일 ignore
+*/data
+
 # End of https://www.toptal.com/developers/gitignore/api/python,windows,jupyternotebooks
