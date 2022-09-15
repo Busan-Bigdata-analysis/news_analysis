@@ -7,6 +7,8 @@ import re
 # 변수 관리
 START_PAGE = 800000
 END_PAGE = 800010
+BREAK_OPTION = '찾으시는 페이지가 여기에 없는 것 같습니다.'
+EMAIL_PATTERN = '[a-z][a-z0-9_]{4,}@(\w+)[.](\w+)'
 
 def getNewsFullText(result):
     options = webdriver.ChromeOptions()
@@ -23,16 +25,14 @@ def getNewsFullText(result):
             soup = BeautifulSoup(html,'html.parser')
             fullText = soup.select('#leftColumn > div > p')
 
-            pattern = '[a-z][a-z0-9_]{4,}@(\w+)[.](\w+)'
-            patt = re.compile(pattern)
+            patt = re.compile(EMAIL_PATTERN)
             # 기사가 삭제되어 페이지가 존재하지 않을때 나오는 메세지
-            breakOption = '찾으시는 페이지가 여기에 없는 것 같습니다.'
 
             news = ''
 
             # 정규식을 사용해서 기사 아래에 오는 기자, 다른 뉴스 링크 등 데이터에 포함 되지 않게 처리
             for j in fullText:
-                if re.search(pattern,j.text) or j.text == breakOption:
+                if re.search(pattern,j.text) or j.text == BREAK_OPTION:
                     break
                 news += j.text + ' '
 
