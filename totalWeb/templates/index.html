@@ -47,6 +47,43 @@
       </div>
     </div>
   </div>
+  <script>
+    $('#shortBtn').on('click', () => {
+      let src = $("#newsInput").val()
+      console.log( src )
+
+      $.post({
+        url:'/short',
+        data:'key='+src,
+        dataType:'json',
+        success: (res) => {
+          console.log('성공',res)
+          $('#shortResult').html(res.value)
+        },
+        error:(err)=>{
+          console.log('오류',err)
+        }
+      })
+    })
+
+    $('#analisysBtn').on('click', () => {
+      let src = $("#shortResult").val()
+      console.log( src )
+
+      $.post({
+        url:'/analisys',
+        data:'key='+src,
+        dataType:'json',
+        success: (res) => {
+          console.log('성공',res)
+          $('#analisysResult').html(res.value)
+        },
+        error:(err)=>{
+          console.log('오류',err)
+        }
+      })
+    })
+  </script>
 
 </body>
 
