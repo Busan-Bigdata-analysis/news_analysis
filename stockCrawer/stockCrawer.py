@@ -34,10 +34,11 @@ def getNewsFullText(result,st,ed):
                 if 1 < idx < 7 or 9 < idx < 15:
                     td = var_range[idx].select('td')
                     date = td[0].text
+                    price = td[1].text
                     jud = re.search(MOD_PATTERN,str(td[2]))
                     ch_mod = jud.group() if jud else 'None' # 굳이 이렇게 쓸 필요가 있나 의문?
                     ch_range = int(td[2].text.strip().replace(',',''))
-                    result.append([date,ch_mod,ch_range])
+                    result.append([date,price,ch_mod,ch_range])
                     # 로그 확인용
                     # print([date,ch_mod,ch_range])
 
@@ -49,7 +50,7 @@ def main():
     result = []
     getNewsFullText(result,START_PAGE,END_PAGE)
 
-    columns = ['date','change mod','change range']
+    columns = ['date','stock Price','change mod','change range']
 
     newsFulltext = pd.DataFrame(result,columns=columns)
 
