@@ -7,6 +7,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <style>
+    @font-face {
+      font-family: 'LeferiPoint-WhiteObliqueA';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'LeferiPoint-WhiteObliqueA';
+    }
+
+    .card {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 
 <body>
@@ -14,16 +31,18 @@
   <div class="container mt-3">
     <h2>News Analisys</h2>
     <p>
-      <div class="form-outline">
-        <textarea class="form-control" id="newsInput" rows="4">News fulltext</textarea>
-      </div>
+    <div class="form-outline">
+      <textarea class="form-control" id="newsInput" rows="14" placeholder="기사내용을 입력하세요"></textarea>
+    </div>
     </p>
     <div id="accordion">
       <div class="card">
         <div class="card-header">
           <div class="row">
             <div class="col"><a class="btn" data-bs-toggle="collapse" href="#collapseOne">뉴스 요약</a></div>
-            <div class="col"><p class="text-end"><button id="shortBtn" type="button" class="btn btn-success">실행</button></p></div>
+            <div class="col">
+              <p class="text-end"><button id="shortBtn" type="button" class="btn btn-success">실행</button></p>
+            </div>
           </div>
         </div>
         <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
@@ -36,7 +55,9 @@
         <div class="card-header">
           <div class="row">
             <div class="col"><a class="btn" data-bs-toggle="collapse" href="#collapseTwo">주가 분석</a></div>
-            <div class="col"><p class="text-end"><button id="analisysBtn" type="button" class="btn btn-success">실행</button></p></div>
+            <div class="col">
+              <p class="text-end"><button id="analisysBtn" type="button" class="btn btn-success">실행</button></p>
+            </div>
           </div>
         </div>
         <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
@@ -49,37 +70,39 @@
   </div>
   <script>
     $('#shortBtn').on('click', () => {
-      let src = $("#newsInput").val()
-      console.log( src )
+      $('#shortResult').text('')
+      let msg = $('#newsInput').val()
+      console.log(msg)
 
       $.post({
-        url:'/short',
-        data:'key='+src,
-        dataType:'json',
+        url: '/short',
+        data: 'msg=' + msg,
+        dataType: 'json',
         success: (res) => {
-          console.log('성공',res)
-          $('#shortResult').html(res.value)
+          console.log('성공', res)
+          $('#shortResult').append(res.msg)
         },
-        error:(err)=>{
-          console.log('오류',err)
+        error: (err) => {
+          console.log('오류', err)
         }
       })
+      
     })
 
     $('#analisysBtn').on('click', () => {
       let src = $("#shortResult").val()
-      console.log( src )
+      console.log(src)
 
       $.post({
-        url:'/analisys',
-        data:'key='+src,
-        dataType:'json',
+        url: '/analisys',
+        data: 'key=' + src,
+        dataType: 'json',
         success: (res) => {
-          console.log('성공',res)
+          console.log('성공', res)
           $('#analisysResult').html(res.value)
         },
-        error:(err)=>{
-          console.log('오류',err)
+        error: (err) => {
+          console.log('오류', err)
         }
       })
     })

@@ -208,3 +208,6 @@ chromedriver.exe
 */data
 
 # End of https://www.toptal.com/developers/gitignore/api/python,windows,jupyternotebooks
+
+# 모델
+kobart-news/
