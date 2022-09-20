@@ -38,10 +38,25 @@
     <div id="accordion">
       <div class="card">
         <div class="card-header">
-          <div class="row">
-            <div class="col"><a class="btn" data-bs-toggle="collapse" href="#collapseOne">뉴스 요약</a></div>
-            <div class="col">
-              <p class="text-end"><button id="shortBtn" type="button" class="btn btn-success">실행</button></p>
+          <div class="row justify-content-around">
+            <div class="col-10"><a class="btn" data-bs-toggle="collapse" href="#collapseOne">뉴스 요약</a></div>
+            <div class="col-1">
+              <div class="dropdown">
+                <button class="btn btn-success" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-three-dots" viewBox="0 0 16 16">
+                    <path
+                      d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                  </svg>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                  <li><a id="shortBtn" class="dropdown-item">요약</a></li>
+                  <li><a id="" class="dropdown-item">전송</a></li>
+                </ul>
+              </div>
+              <!-- <p class="text-end">
+                <button id="shortBtn" type="button" class="btn btn-success">실행</button>
+              </p> -->
             </div>
           </div>
         </div>
@@ -53,10 +68,15 @@
       </div>
       <div class="card">
         <div class="card-header">
-          <div class="row">
-            <div class="col"><a class="btn" data-bs-toggle="collapse" href="#collapseTwo">주가 분석</a></div>
-            <div class="col">
-              <p class="text-end"><button id="analisysBtn" type="button" class="btn btn-success">실행</button></p>
+          <div class="row justify-content-around">
+            <div class="col-10"><a class="btn" data-bs-toggle="collapse" href="#collapseTwo">추천 종목</a></div>
+            <div class="col-1">
+              <button id="analisysBtn" type="button" class="btn btn-success">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -87,7 +107,7 @@
           console.log('오류', err)
         }
       })
-      
+
     })
 
     $('#analisysBtn').on('click', () => {
