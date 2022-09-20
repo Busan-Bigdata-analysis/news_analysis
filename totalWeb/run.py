@@ -14,7 +14,7 @@ def short():
     # shortText = summary_text_ids[0]
     res = {
         # 'msg': tokenizer.decode(summary_text_ids(request.form.get('msg'))[0]),
-        'msg': decoding_summary_text(summary_text_ids)
+        'msg': decoding_summary_text(mySummary_text_ids(request.form['msg']))
     }
     return jsonify(res)
 

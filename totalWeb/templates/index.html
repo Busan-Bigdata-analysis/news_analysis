@@ -73,6 +73,7 @@
       $('#shortResult').text('')
       let msg = $('#newsInput').val()
       console.log(msg)
+      $('#newsInput').val('')
 
       $.post({
         url: '/short',
