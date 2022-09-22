@@ -11,6 +11,7 @@
 * DACON 한국어 텍스트 요약 경진대회 데이터
 * News 요약 모델
 <br/><br/>
+- - -
 
 ![BART](/src/img/bert.png)<br/>
 
@@ -22,6 +23,7 @@
     + [기사 획득]()
 * 뉴스 카테고리 분류
 <br/><br/>
+- - -
 
 ![BART](/src/img/flask.png)<br/>
 
