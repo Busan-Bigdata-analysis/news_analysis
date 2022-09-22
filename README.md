@@ -1,19 +1,41 @@
 # news_category_analysis
 
-## Goal
+## Avatar
+- - -
 
-### 1st step
-- 학습시킨 모델을 이용하여 뉴스 요약
-    - 키워드를 뽑아내는 모델
+<img src="/src/img/bart.png" width="200px" height="400px" title="bart" alt="bart"><img><br/>
 
-### 2nd step
-- 처음 모델에서 뽑은 키워드들로 훈련 세트 구축
-- 뉴스의 키워드들만 주가에 영향을 준다고 가정
-    - 몇개의 기업만 선정하여 학습
-    - 키워드와 해당 하는 날의 주가들을 매치하여 학습 데이터 구축
-    - 뉴스 -> 키워드 -> 주가에 영향
-        - 두개의 모델을 거쳐서 뉴스가 주가에 주는 영향을 예측
+- - -
 
-    - 외곡점
-        - 주가의 변동이 이미 반영된 이후에 뉴스가 나올 수 있음
-        - 금리 및 유가 등 고려해야 할 사항이 더 많음
+### koBart-Ainize
+* DACON 한국어 텍스트 요약 경진대회 데이터
+* News 요약 모델
+<br/><br/>
+
+<img src="/src/img/bert.png" width="200px" height="400px" title="bert" alt="bert"><img><br/>
+
+- - -
+
+### BERTClassifier
+* 학습 데이터 수집
+    + 카테고리 분류된 뉴스 기사
+    + [기사 획득]()
+* 뉴스 카테고리 분류
+<br/><br/>
+
+<img src="/src/img/flask.png" width="200px" height="400px" title="flask" alt="flask"><img><br/>
+
+- - -
+
+### Flask Web
+* Flask를 이용한 웹 구현
+    + [Flask web]()
+<br/><br/><br/><br/>
+
+### Agenda
+* [Milestones](https://github.com/News-sentiment-analysis/news_analysis/milestone/1)
+* [Projects](https://github.com/orgs/News-sentiment-analysis/projects/1)
+* developer
+    + model     :   [121click](https://github.com/121click)
+    + web       :   [sseung](https://github.com/sseungE)
+    + support   :   [yuSee](https://github.com/PLAYseung)
