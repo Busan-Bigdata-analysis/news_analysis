@@ -15,7 +15,7 @@
 * use colab
 * [BERT model](/buildModel/BertModel.ipynb)
 * Data set
-    + [total_data_set](https://drive.google.com/file/d/1iEM7ZGOZVRu5xVrCniZufAK7t5rOzxHu/view?usp=sharing)
+    + [total_data_set](https://drive.google.com/file/d/10MgaTNhf8ueRAdTI0gyp5oC0ZwL1DyHQ/view?usp=sharing)
     + 구성 
         - newsfulltext | theme
         - theme
