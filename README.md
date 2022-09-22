@@ -36,7 +36,6 @@
 
 ### Agenda
 * [Milestones](https://github.com/News-sentiment-analysis/news_analysis/milestone/1)
-* [Projects](https://github.com/orgs/News-sentiment-analysis/projects/1)
 * developer
     + model     :   [121click](https://github.com/121click)
     + web       :   [sseung](https://github.com/sseungE)
