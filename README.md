@@ -30,7 +30,7 @@
 - - -
 
 ### Flask Web
-* Flask를 이용한 웹 구현
+* Flask를 이용한 웹 구현<br/>
 ![Flask web](/src/img/flask_web.png)
 <br/><br/><br/><br/>
 
