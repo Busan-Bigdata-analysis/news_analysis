@@ -3,7 +3,7 @@
 ## Avatar
 - - -
 
-<img src="/src/img/bart.png" width="200px" height="400px" title="bart" alt="bart"><img><br/>
+![BART](/src/img/bart.png)<br/>
 
 - - -
 
@@ -12,7 +12,7 @@
 * News 요약 모델
 <br/><br/>
 
-<img src="/src/img/bert.png" width="200px" height="400px" title="bert" alt="bert"><img><br/>
+![BART](/src/img/bert.png)<br/>
 
 - - -
 
@@ -23,7 +23,7 @@
 * 뉴스 카테고리 분류
 <br/><br/>
 
-<img src="/src/img/flask.png" width="200px" height="400px" title="flask" alt="flask"><img><br/>
+![BART](/src/img/flask.png)<br/>
 
 - - -
 
