@@ -111,16 +111,17 @@
     })
 
     $('#analisysBtn').on('click', () => {
-      let src = $("#shortResult").val()
-      console.log(src)
+      $('#analisysResult').text('')
+      let msg = $('#newsInput').val()
+      console.log(msg)
 
       $.post({
         url: '/analisys',
-        data: 'key=' + src,
+        data: 'key=' + msg,
         dataType: 'json',
         success: (res) => {
           console.log('성공', res)
-          $('#analisysResult').html(res.value)
+          $('#analisysResult').append(res.msg)
         },
         error: (err) => {
           console.log('오류', err)

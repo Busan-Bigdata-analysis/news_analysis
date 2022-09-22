@@ -1,5 +1,6 @@
 from flask import Flask,request,render_template,jsonify
 from ainize import *
+from src.data import *
 # 남이 만든 모듈을 내가 가져다 사용
 # from model import predictMainStream
 
@@ -16,9 +17,12 @@ def short():
     }
     return jsonify(res)
 
-@app.route('/analisys')
+@app.route('/analisys',methods=['POST'])
 def analisys():
-    pass
+    res ={
+        'msg' : getName(0)
+    }
+    return jsonify(res)
 
 if __name__=='__main__':
     app.run(debug=True)
