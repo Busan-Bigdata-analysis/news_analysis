@@ -5,14 +5,6 @@ import os
 from utils import init_logger
 import argparse
 
-'''
-
-손 덜 댔음 주의. 09.21 22:10
-이 부분에서 lucy_data는 희승씨가 줄 33개 category를 가지고 있는 데이터 셋의 이름을 정해서 그것으로 대체 할 것.
-
-'''
-
-
 
 
 def predict_func(pred_config):
