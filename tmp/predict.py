@@ -56,7 +56,6 @@ class Predict():
 
 
   '''
-  이 부분 희승씨가 만들어주신 category dataset 불러오는 코드를 넣어주세요!
 
   주의, def calc_accuracy 부터 약간 바뀐 것 있음, def get_accuracy는 현국의 원본 코드에 없었음.
 
